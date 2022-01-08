@@ -70,7 +70,7 @@ struct Node
 int fractional_node(struct Node *head, int k)
 {
     // your code here
-    /*Node*temp = head;
+   /* Node*temp = head;
     int n=0;
     while(temp->next!=NULL){
         n++;
@@ -78,13 +78,15 @@ int fractional_node(struct Node *head, int k)
     }
     int m=ceil(n/k);
 
-    while(m){
-        m--;
+    //while(m){
+      //  m--;
+        for(int i=1;i<=m+1;i++)
+        {
         temp=temp->next;
-        
-    }
-    return temp->data;*/
-    
+        }
+    //}
+    return temp->data;
+}*/    
       int N=0;
    struct Node *ptr;
    ptr=head;
