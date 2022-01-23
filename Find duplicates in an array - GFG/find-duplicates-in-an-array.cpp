@@ -9,9 +9,9 @@ class Solution{
         // code here
          sort(arr, arr+n);  //O(nlogn)
        vector<int> v;
-       int num=INT_MIN;
+       int num=INT_MAX;
        for(int i = 1; i < n; i++){    // theta(n)
-           if(arr[i] == arr[i-1] && num!=arr[i]){
+           if(arr[i] == arr[i-1]   && num!=arr[i]){
            num = arr[i];
            v.push_back(arr[i]);
        }
