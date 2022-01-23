@@ -20,8 +20,24 @@ class Solution{
            v.push_back(-1);
        }
        return v;
+       
     }
 };
+
+
+/*
+for(int i=0;i<n;i++){
+    int j=i+1;
+    if(arr[i]==arr[j){
+        v.push_back(arr[i]);
+        j++;
+    }
+    else if(v.size()==0)
+    {
+        v.push_back(-1);
+    }
+}
+*/
 
 
 // { Driver Code Starts.
