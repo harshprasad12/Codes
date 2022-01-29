@@ -47,7 +47,7 @@ class Solution{
         if(head==NULL){
             return 0;
         }
-        while(fast!=NULL && fast->next!=NULL){
+        while(fast && fast->next){
             slow=slow->next;
             fast=fast->next->next;
         }
