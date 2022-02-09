@@ -46,10 +46,10 @@ class Solution
         Node* forward=NULL;
         
         while(current!=NULL){
-            forward= current->next;
-            current->next= previous;
-            previous= current;
-            current= forward;
+            forward=current->next;
+            current->next=previous;
+            previous=current;
+            current=forward;
         }
         return previous;
     }
