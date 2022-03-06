@@ -26,14 +26,13 @@ int main()
 
 void rotate(int a[], int n)
 {
-    int f=a[n-1];
-   for(int i=n-1;i>=1-1;i--){
-     a[i]=a[i-1];
-   
+  int last=a[n-1];
+  
+  for(int i=n-1;i>=1;i--){
+      a[i]=a[i-1];
+  }
+  a[0]=last;
 }
-a[0]=f;
-};
-
 
 /*
 #include<iostream>
