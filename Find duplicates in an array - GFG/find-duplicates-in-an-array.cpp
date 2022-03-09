@@ -7,37 +7,26 @@ class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
         // code here
-         sort(arr, arr+n);  //O(nlogn)
-       vector<int> v;
-       int num=INT_MAX;
-       for(int i = 1; i < n; i++){    // theta(n)
-           if(arr[i] == arr[i-1]   && num!=arr[i]){
-           num = arr[i];
-           v.push_back(arr[i]);
-       }
-       }
-       if(v.empty()){
-           v.push_back(-1);
-       }
-       return v;
-       
+        vector<int>v;
+        unordered_map<int,int>m;
+        for(int i=0;i<n;i++){
+            m[arr[i]]++;
+        }
+        
+        for(auto i:m)
+           {
+       if(i.second>1)
+            v.push_back(i.first);
+               }
+        
+        if(v.size()==0){
+            v.push_back(-1);
+        }
+        
+        sort(v.begin(),v.end());
+        return v;
     }
 };
-
-
-/*
-for(int i=0;i<n;i++){
-    int j=i+1;
-    if(arr[i]==arr[j){
-        v.push_back(arr[i]);
-        j++;
-    }
-    else if(v.size()==0)
-    {
-        v.push_back(-1);
-    }
-}
-*/
 
 
 // { Driver Code Starts.
