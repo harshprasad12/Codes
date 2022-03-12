@@ -13,6 +13,7 @@ class Solution{
   public:
     int MissingNumber(vector<int>& array, int n) {
         // Your code goes here
+        
         int sum=0;
         int final=((n+1)*n)/2;
         for(int i=0;i<n-1;i++)
@@ -21,6 +22,7 @@ class Solution{
         }
         
         return final-sum;
+        
         //return res;
     }
 };
@@ -36,6 +38,37 @@ class Solution{
 }
 return temp;
 }*/
+
+
+/*
+#include<bits/stdc++>
+using namepace std;
+
+
+int fn(int a[], int n){
+    int sum=n*(n+1)/2;
+    int sum_of_ele = 0;
+    for(int i=0;i<n;i++){
+        sum_of_ele=sum_of_ele + a[i];
+    }
+    return sum-sum_of_ele;
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    fn(a,n);
+    reutrn 0;
+}
+
+*/
+
+
 
 // { Driver Code Starts.
 
