@@ -26,12 +26,12 @@ int main()
 
 void rotate(int a[], int n)
 {
-  int last=a[n-1];
+  int first=a[n-1];
   
-  for(int i=n-1;i>=1;i--){
+  for(int i=n-1;i>0;i--){
       a[i]=a[i-1];
   }
-  a[0]=last;
+  a[0]=first;
 }
 
 /*
