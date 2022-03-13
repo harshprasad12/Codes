@@ -15,13 +15,13 @@ class Solution{
         // Your code goes here
         
         int sum=0;
-        int final=((n+1)*n)/2;
-        for(int i=0;i<n-1;i++)
-        {
+        int tot_sum=n*(n+1)/2;
+        
+        for(int i=0;i<n-1;i++){
             sum=sum+array[i];
         }
         
-        return final-sum;
+        return tot_sum-sum;
         
         //return res;
     }
