@@ -12,7 +12,7 @@ class Solution{
     void convertToWave(vector<int>& arr, int n){
         
         // Your code here
-        if(n%2!=0){
+       if(n%2!=0){
             for(int i=0;i<n-2;i=i+2){
                 int temp=arr[i];
                 arr[i]=arr[i+1];
@@ -29,7 +29,6 @@ class Solution{
                 }
             }
         }
-        
     }
 };
 
