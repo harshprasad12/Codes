@@ -14,21 +14,21 @@ class Solution
     {
        // Your code here
        
-       vector<int>res;
-       
-       vector<int> NGL;
-       stack<int> st;
-       for(int i=0; i<n; i++){
-           if(st.empty()) NGL.push_back(1+i);
-           else if(price[st.top()]>price[i]) NGL.push_back(i-st.top());
-           else if(price[st.top()]<=price[i]){
-               while(!st.empty() && price[st.top()]<=price[i]) st.pop();
-               if(st.empty()) NGL.push_back(1+i);
-               else NGL.push_back(i-st.top());
-           }
-           st.push(i);
-       }
-       return NGL;
+        vector<int> ans(n);
+     stack<int> s;
+     ans[0] = 1;
+     s.push(0);
+     for(int i=1; i<n; i++)
+     {
+        while(!s.empty() && price[i] >= price[s.top()])
+        {
+            s.pop();
+        }
+        if(s.empty()) ans[i] = i+1;
+        if(!s.empty()) ans[i] = i - s.top();
+        if(i != n-1) s.push(i);
+     }
+     return ans;
        
     }
 };
