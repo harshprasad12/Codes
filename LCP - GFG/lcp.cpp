@@ -8,20 +8,32 @@ using namespace std;
 
 class Solution{
 public:
-string LCP(string ar[], int n)
-   {
-       sort(ar,ar+n);
-       
-       string s1=ar[0],s2=ar[n-1];
-       if(s1[0]!=s2[0]) return"-1";
-       int l=s1.size(),m=s2.size();
-       string ans="";
-       for(int i=0;i<m;i++){
-           if(s1[i]==s2[i]) ans+=s1[i];
-           else break;
-       }
-       return ans;
-   }
+    string LCP(string a[], int n)
+    {
+        // code here
+        string res;
+        int leng=101;
+        // sort the string array
+        sort(a,a+n);
+        string s=a[n-1];
+        //now get the greater string and apply that on the whole array to compare it from
+        for(int i=0;i<n-1;i++)
+        {
+            int count=0;
+            for(int j=0;j<a[i].length();j++)
+            {
+                if(a[i][j]!=s[j])
+                    break;
+                count++;
+            }
+            if(leng>count)
+                leng=count;
+        }
+        // cout<<leng<<endl;
+        if(leng==0)
+            return "-1";
+        return s.substr(0,leng);
+    }
 };
 
 // { Driver Code Starts.
